@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+    <item android:title="Schedule"
+        >
+        <menu>
+            <item
+                android:id="@+id/day1"
+                android:icon="@drawable/ic_today_black_24dp"
+                android:onClick="scheduleList"
+                android:title="Day 1" />
+
+            <item
+                android:id="@+id/day2"
+                android:icon="@drawable/ic_today_black_24dp"
+                android:onClick="scheduleList"
+                android:title="Day 2" />
+            <item
+                android:id="@+id/day3"
+                android:icon="@drawable/ic_today_black_24dp"
+                android:onClick="scheduleList"
+                android:title="Day 3" />
+            <item
+                android:id="@+id/day4"
+                android:icon="@drawable/ic_today_black_24dp"
+                android:onClick="scheduleList"
+                android:title="Day 4" />
+        </menu>
+    </item>
+
+</menu>
