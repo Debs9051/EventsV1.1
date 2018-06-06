@@ -20,6 +20,8 @@ import events.tcs.com.events.dayoneclass;
 import events.tcs.com.events.daythreeclass;
 import events.tcs.com.events.daytwoclass;
 
+
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -30,27 +32,30 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+       FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
-        });
+    });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
+        drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new dayoneclass()).commit();
+
 
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-    }
+/*if (savedInstanceState == null) {
+    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new dayoneclass()).commit();
+    navigationView.setCheckedItem(R.id.day1);
+}*/}
 
     @Override
     public void onBackPressed() {
@@ -91,13 +96,13 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
   if (id == R.id.day1) {
 
-         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new dayoneclass()).commit();
+         //getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new dayoneclass()).commit();
         } else if (id == R.id.day2) {
-      getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new daytwoclass()).commit();
+      //getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new daytwoclass()).commit();
         } else if (id == R.id.day3) {
-      getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new daythreeclass()).commit();
+      //getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new daythreeclass()).commit();
         } else if (id == R.id.day4) {
-      getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new dayfourclass()).commit();
+      //getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new dayfourclass()).commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
